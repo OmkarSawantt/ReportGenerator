@@ -1,0 +1,11 @@
+const express=require('express')
+const router=express.Router()
+const {createReport,getUserReports,updateReport,deleteReport,viewReport,downloadReport,getReport}=require('../controllers/ReportController')
+router.post('/',createReport)
+router.get('/user',getUserReports)
+router.get('/:id',getReport)
+router.patch('/:id',updateReport)
+router.delete('/:id',deleteReport)
+router.get('/view/:id',viewReport)
+router.get('/download/:id',downloadReport)
+module.exports=router

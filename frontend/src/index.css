@@ -1,0 +1,16 @@
+@tailwind base;
+body{
+  background-image: url('./constants/blob-scene-haikei.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a2e;
+}
+@tailwind components;
+@tailwind utilities;
+.datepickerbg {
+  color-scheme: dark;
+}
