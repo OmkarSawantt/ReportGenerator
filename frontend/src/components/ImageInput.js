@@ -54,6 +54,8 @@ const ImageInput = () => {
 
     for (const [key, value] of Object.entries(repData)) {
       updatedRepData.append(key, value);
+      console.log(key,value);
+
     }
     imageFiles.forEach((file) => {
       updatedRepData.append('pictures', file);

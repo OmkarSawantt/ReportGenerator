@@ -37,20 +37,26 @@ const TextInput = () => {
   const data = loc.state?.data;
 
   const handleSubmit = () => {
-    const repData = {
-      title,
-      date,
-      time: `${time1} to ${time2}`,
-      location,
-      template: data?.template
-    };
+    if(title===''|| date==='' || time1==='' || time2==='' || location==='' ){
+      alert('Fill all the field');
+      return
+    }
+    const repData = new FormData();
+    repData.append('title',title)
+    repData.append('date',date)
+    repData.append('time', `${time1} to ${time2}`)
+    repData.append('location',location)
+    repData.append('template',data?.template)
 
     if (data?.template === 1 || data?.template === 2) {
-      console.log(repData);
       createReport(repData).then((res) => {
-        console.log(res);
-        navigate('/new-report/result', { state: { id: res.data._id } });
+        if(res.success){
+          navigate('/new-report/result', { state: { id: res.data._id } });
+        }else{
+          alert('Something went wrong')
+        }
       }).catch((err) => {
+        alert('Something went wrong')
         console.log(err);
       });
     } else {
