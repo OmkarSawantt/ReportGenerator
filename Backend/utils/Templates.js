@@ -12,7 +12,7 @@ exports.Template1=(eventTitle,eventDate,eventTime,eventLocation)=>{
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0 auto;
-            height:450vh;
+            height:auto;
             padding: 20px;
         }
         h1 {
@@ -41,7 +41,6 @@ exports.Template1=(eventTitle,eventDate,eventTime,eventLocation)=>{
             bottom: 0%;
             left: 0%;
             width: 100%;
-
         }
 
     </style>
@@ -53,7 +52,6 @@ exports.Template1=(eventTitle,eventDate,eventTime,eventLocation)=>{
         <p><strong>Time:</strong>${eventTime}</p>
         <p><strong>Location:</strong> ${eventLocation}</p>
     </div>
-    <footer>Generated on ${new Date().toLocaleDateString()}</footer>
 </body>
 </html>`
   return str
@@ -72,7 +70,7 @@ exports.Template2=(eventTitle,eventDate,eventTime,eventLocation)=>{
               font-family: Arial, sans-serif;
               line-height: 1.6;
               margin: 0 auto;
-              height:450vh;
+              height:auto;
               padding: 20px;
           }
         h1 {
@@ -113,7 +111,6 @@ exports.Template2=(eventTitle,eventDate,eventTime,eventLocation)=>{
           <p><strong>Time:</strong>${eventTime}</p>
           <p><strong>Location:</strong> ${eventLocation}</p>
       </div>
-      <footer>Generated on ${new Date().toLocaleDateString()}</footer>
   </body>
   </html>`
     return str
@@ -136,7 +133,7 @@ exports.Template3=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
               font-family: Arial, sans-serif;
               line-height: 1.6;
               margin: 0 auto;
-              height:450vh;
+              height:auto;
               padding: 20px;
           }
           h1 {
@@ -181,7 +178,6 @@ exports.Template3=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
           <p><strong>Location:</strong> ${eventLocation}</p>
       </div>
       <img src="${imgSrc}" alt="Event Image">
-      <footer>Generated on ${new Date().toLocaleDateString()}</footer>
   </body>
   </html>`
     return str
@@ -203,7 +199,7 @@ exports.Template4=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
               font-family: Arial, sans-serif;
               line-height: 1.6;
               margin: 0 auto;
-              height:450vh;
+              height:auto;
               padding: 20px;
           }
         h1 {
@@ -261,7 +257,6 @@ exports.Template4=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
             <td style="width: 50%;"><img src="${imgSrc}" alt="Event Image"></td>
         </tr>
       </table>
-      <footer>Generated on ${new Date().toLocaleDateString()}</footer>
   </body>
   </html>`
     return str
@@ -285,7 +280,7 @@ exports.Template5 = (eventTitle, eventDate, eventTime, eventLocation, images) =>
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
                 margin: 0 auto;
-                height: 450vh;
+                height: auto;
                 padding: 20px;
             }
             h1 {
@@ -343,7 +338,6 @@ exports.Template5 = (eventTitle, eventDate, eventTime, eventLocation, images) =>
                 <td><img src="${src}" alt="Event Image"></td>`).join('')}
             </tr>
         </table>
-        <footer>Generated on ${new Date().toLocaleDateString()}</footer>
     </body>
     </html>`;
 
@@ -369,7 +363,7 @@ exports.Template6=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
                 margin: 0 auto;
-                height: 450vh;
+                height: auto;
                 padding: 20px;
             }
             h1 {
@@ -432,7 +426,6 @@ exports.Template6=(eventTitle,eventDate,eventTime,eventLocation,images)=>{
                 <td><img src="${src}" alt="Event Image"></td>`).join('')}
             </tr>
         </table>
-        <footer>Generated on ${new Date().toLocaleDateString()}</footer>
     </body>
     </html>`;
 

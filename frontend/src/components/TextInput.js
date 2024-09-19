@@ -36,7 +36,8 @@ const TextInput = () => {
 
   const data = loc.state?.data;
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if(title===''|| date==='' || time1==='' || time2==='' || location==='' ){
       alert('Fill all the field');
       return
@@ -60,7 +61,8 @@ const TextInput = () => {
         console.log(err);
       });
     } else {
-      navigate('/new-report/image', { state: { repData } });
+      const repDataObj = Object.fromEntries(repData.entries());
+      navigate('/new-report/image', { state: { repData: repDataObj } });
     }
   };
 
@@ -72,18 +74,18 @@ const TextInput = () => {
       </div>
       <label className='mx-4 my-4 sm:mx-8 text-lg text-blue-100 sm:text-2xl w-4/5 sm:w-1/2 underline'>Date</label>
       <div className="relative mx-4 sm:mx-8 w-auto sm:w-1/2">
-        <input type="date" id="default-datepicker" className="bg-transparent border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-full p-2.5 ease-in duration-300" name="date" value={date} onChange={handleInputChange} required />
+        <input type="date" id="default-datepicker" className="bg-transparent border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-full p-2.5 ease-in duration-300" name="date" value={date} onChange={handleInputChange} placeholder='' required />
       </div>
       <label className='mx-4 my-4 sm:mx-8 text-lg text-blue-100 sm:text-2xl w-4/5 sm:w-1/2 underline'>Time</label>
       <div className="relative mx-4 sm:mx-0 w-auto sm:w-1/2 flex justify-between">
         <label className='text-sm text-blue-100 sm:text-lg'>From</label>
-        <input type="time" id="time" className="bg-transparent  border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-32 sm:w-1/4 p-2.5 ease-in duration-300" name="time1" value={time1} onChange={handleInputChange} required />
+        <input type="time" id="time" className="bg-transparent  border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-32 sm:w-auto sm:px-4 -2.5 ease-in duration-300"  placeholder='' name="time1" value={time1} onChange={handleInputChange} required />
         <label className='text-sm text-blue-100 sm:text-lg'>To</label>
-        <input type="time" id="time" className="bg-transparent border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-32 sm:w-1/4 p-2.5 ease-in duration-300" name="time2" value={time2} onChange={handleInputChange} required />
+        <input type="time" id="time" className="bg-transparent border h-4/5 sm:h-full border-[#97C3F0] text-blue-100 text-sm rounded-lg datepickerbg block w-32 sm:w-auto sm:px-4 p-2.5 ease-in duration-300" placeholder='' name="time2" value={time2} onChange={handleInputChange} required />
       </div>
       <label className='mx-4 my-4 sm:mx-8 text-lg text-blue-100 sm:text-2xl w-4/5 sm:w-1/2 underline'>Location</label>
       <div className='mx-4 sm:mx-8 w-auto sm:w-1/2'>
-        <Input color="primary" size={isSmallScreen ? 'sm' : 'lg'} variant="outlined" value={location} name="location" onChange={handleInputChange} sx={{ backgroundColor: 'transparent', color: 'white', width: '100%', textSizeAdjust: '2rem' }} required />
+        <Input color="primary" size={isSmallScreen ? 'sm' : 'lg'} placeholder='' variant="outlined" value={location} name="location" onChange={handleInputChange} sx={{ backgroundColor: 'transparent', color: 'white', width: '100%', textSizeAdjust: '2rem' }} required />
       </div>
       <button type="button" onClick={handleSubmit} className="relative h-auto my-5 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group self-center">
         <span className="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-400 group-hover:opacity-100"></span><span className="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span><span className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white to-transparent opacity-5"></span><span className="absolute bottom-0 left-0 w-4 h-full bg-gradient-to-r from-white to-transparent opacity-5"></span><span className="absolute bottom-0 right-0 w-4 h-full bg-gradient-to-l from-white to-transparent opacity-5"></span><span className="absolute inset-0 w-full h-full border border-white rounded-md opacity-10"></span><span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-5"></span>
